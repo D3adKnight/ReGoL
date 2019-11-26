@@ -20,8 +20,22 @@ let make = (~gridSize=gridSize) => {
   let onClear = _ => setGrid(_ => makeGrid(gridSize));
   let startLabel = running ? "stop" : "start";
 
+  let style =
+    ReactDOMRe.Style.make(
+      ~display="flex",
+      ~flexDirection="row",
+      ~margin="0 -10px",
+      (),
+    );
+
   <div>
-    <Controls onClear onStart onRandom startLabel />
-    <Grid grid gridSize toggleCell />
+    <h2> {React.string("Game of Life")} </h2>
+    <div style>
+      <div style={ReactDOMRe.Style.make(~margin="0 10px", ())}>
+        <Controls onClear onStart onRandom startLabel />
+        <Grid grid gridSize toggleCell />
+      </div>
+      <Info />
+    </div>
   </div>;
 };
