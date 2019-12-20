@@ -32,14 +32,23 @@ let neighborCells = [
 
 let isInBounds = (~x, ~y, ~size) => x >= 0 && x < size && y >= 0 && y < size;
 
+let wrapValue = (~value, ~min, ~max) =>
+  value < min ? max : value > max ? min : value;
+
+let wrapCoords = (~x, ~y, ~size) => {
+  let newX = wrapValue(x, 0, size);
+  let newY = wrapValue(y, 0, size);
+
+  (newX, newY);
+};
+
 let calculateNeighbours = (grid, size, ~x, ~y) =>
   List.fold_left(
     (total, (nX, nY)) => {
-      let checkedX = x + nX;
-      let checkedY = y + nY;
+      let checkedX = wrapValue(~value=x + nX, ~min=0, ~max=size - 1);
+      let checkedY = wrapValue(~value=y + nY, ~min=0, ~max=size - 1);
 
-      isInBounds(~x=checkedX, ~y=checkedY, ~size)
-        ? total + getValueByXY(~grid, ~size, ~x=checkedX, ~y=checkedY) : total;
+      total + getValueByXY(~grid, ~size, ~x=checkedX, ~y=checkedY);
     },
     0,
     neighborCells,
