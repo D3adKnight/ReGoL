@@ -1,0 +1,15 @@
+{
+  "imports": {
+    "bs-platform/lib/es6/array.js": "./bs-platform/lib/es6/array.js",
+    "bs-platform/lib/es6/belt_Option.js": "./bs-platform/lib/es6/belt_Option.js",
+    "bs-platform/lib/es6/caml_array.js": "./bs-platform/lib/es6/caml_array.js",
+    "bs-platform/lib/es6/caml_int32.js": "./bs-platform/lib/es6/caml_int32.js",
+    "bs-platform/lib/es6/caml_obj.js": "./bs-platform/lib/es6/caml_obj.js",
+    "bs-platform/lib/es6/caml_option.js": "./bs-platform/lib/es6/caml_option.js",
+    "bs-platform/lib/es6/curry.js": "./bs-platform/lib/es6/curry.js",
+    "bs-platform/lib/es6/list.js": "./bs-platform/lib/es6/list.js",
+    "bs-platform/lib/es6/random.js": "./bs-platform/lib/es6/random.js",
+    "react": "./react.js",
+    "react-dom": "./react-dom.js"
+  }
+}

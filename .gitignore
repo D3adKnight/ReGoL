@@ -2,7 +2,4 @@
 .merlin
 .bsb.lock
 npm-debug.log
-/lib/bs/
-*.bs.js
 /node_modules/
-/bundleOutput/
