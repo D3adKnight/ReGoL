@@ -1,21 +1,20 @@
 {
-  "name": "reason-react-examples",
-  "reason": {
-    "react-jsx": 3,
-  },
+  "$schema": "https://raw.githubusercontent.com/rescript-lang/rescript-compiler/master/docs/docson/build-schema.json",
+  "name": "game-of-life",
+  "version": "0.0.1",
   "sources": {
     "dir" : "src",
     "subdirs" : true
   },
-  "bsc-flags": ["-bs-super-errors", "-bs-no-version-header"],
-  "package-specs": [{
-    "module": "commonjs",
+  "package-specs": {
+    "module": "es6",
     "in-source": true
-  }],
+  },
   "suffix": ".bs.js",
-  "namespace": true,
-  "bs-dependencies": [
-    "reason-react"
-  ],
-  "refmt": 3
+  "reason": { "react-jsx": 3 },
+  "bsc-flags": ["-bs-super-errors", "-bs-no-version-header"],
+  "bs-dependencies": ["@rescript/react"],
+  "warnings": {
+    "number": "-48"
+  }
 }
